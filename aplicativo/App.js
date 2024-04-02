@@ -23,7 +23,7 @@ import { View, Text, Image} from "react-native";
 class App extends Component{ // Criando um componente (App), ou seja, tudo que o Componente tem, o App vai ter
   //Render é mostrar na tela -> renderizar
   //Toda função tem que ter um return
-  //Componente é um conjunto de itens; Cada View é um componente
+  //Componente é um conjunto de itens; Cada View ou Text é um componente
   render() {
     let curso = 'INFO';
 
@@ -37,11 +37,13 @@ class App extends Component{ // Criando um componente (App), ou seja, tudo que o
         {/* URI é o caminho, url é o link */}
         {/* Image é obrigado a informar a largura e a altura */}
         <Text>{curso}</Text>
+        {/* Usa-se chaves'{}' para declarar variáveis */}
 
         {/* Para chamar o componente */}
         {/* <MinhaImagem /> */}
         {/* Passando propriedades a Largura e a Altura */}
-        <MinhaImagem largura={400} altura={400} nome="Imagem 1" /> 
+        <MinhaImagem largura={400} altura={400} nome="Imagem 1"/>
+        <MinhaImagem largura={200} altura={200} nome="Imagem 3"/>
 
       </View>
     );
@@ -60,9 +62,10 @@ class MinhaImagem extends Component{
     let img = 'url da imagem';
     return(
       <View>
-      {/*  <Image source={{uri: img}} style={{width: 300, height:300}}/> */}
+      {/* <Image source={{uri: img}} style={{width: 300, height:300}}/> */}
 
-        <Image source={{uri: img}} style={{width: this.props.largura, height: this.props.altura}} />
+        <Image source={{uri: img}} style={{width: this.props.largura, height: this.props.altura}}/>
+        {/* this.props = Colocar o valor das propriedades */}
         <Text> {this.props.nome}</Text>
       </View>
     );
